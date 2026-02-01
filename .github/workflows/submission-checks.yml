@@ -1,0 +1,34 @@
+name: Submission Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Anktechsol attribution
+        run: |
+          found=false
+          for file in README.md CREDIT.md; do
+            if [ -f "$file" ] && grep -q "Anktechsol" "$file"; then
+              found=true
+              break
+            fi
+          done
+          if [ "$found" = false ]; then
+            echo "Missing Anktechsol attribution."
+            exit 1
+          fi
+
+      - name: Check workflows directory is not empty
+        run: |
+          if [ ! "$(ls -A .github/workflows 2>/dev/null)" ]; then
+            echo ".github/workflows directory is empty or missing."
+            exit 1
+          fi
