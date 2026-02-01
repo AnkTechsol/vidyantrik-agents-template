@@ -1,17 +1,17 @@
 {
   "repo": "anktechsol/vidyantrik-agents-template",
-  "hf_org": "Anktechsol",
+  "project": "Vidyantrik Course UI + MCQ",
   "steps": [
-    {"id": 1, "title": "Create GitHub template repo", "status": "completed"},
-    {"id": 2, "title": "Add CREDIT.md and README header", "status": "completed"},
-    {"id": 3, "title": "Add GH Actions: sync-to-space.yml", "status": "completed"},
-    {"id": 4, "title": "Add GH Actions: submission-checks.yml", "status": "completed"},
-    {"id": 5, "title": "Add TRAINER_RUBRIC.yml", "status": "completed"},
-    {"id": 6, "title": "Add PR_TEMPLATE.md and TRAINER_SELF_CHECK.md", "status": completedpending"},
-    {"id": 7, "title": "Create Anktechsol HF Space for pilot", "status": "completed"},
-    {"id": 8, "title": "Create org secrets (HF_TOKEN)", "status": "completed"},
-    {"id": 9, "title": "Test push to HF Space (mirror)", "status": "completed"},
-    {"id": 10, "title": "Create marketing webhook issue automation", "status": "completed"}
+    {"id": 1, "title": "Design UI wireframes with Gemini", "status":"completed"},
+    {"id": 2, "title": "Generate React components with Gemini", "status":"pending"},
+    {"id": 3, "title": "Claude: backend API skeleton", "status":"pending"},
+    {"id": 4, "title": "Claude: DB schema and migrations", "status":"pending"},
+    {"id": 5, "title": "Claude: Certificate generator worker", "status":"pending"},
+    {"id": 6, "title": "Integrate frontend + backend, secrets setup", "status":"pending"},
+    {"id": 7, "title": "MCQ flow and scoring tests", "status":"pending"},
+    {"id": 8, "title": "Final test flow + certificate issuance", "status":"pending"},
+    {"id": 9, "title": "Admin dashboard & trainer review queue", "status":"pending"},
+    {"id": 10, "title": "Deploy test and QA run", "status":"pending"}
   ],
-  "last_updated": 2026-02-01T20:20:00+05:30"
+  "last_updated": "2026-02-01T22:00:00+05:30"
 }
