@@ -8,8 +8,8 @@
     {"id": 4, "title": "Add GH Actions: submission-checks.yml", "status": "completed"},
     {"id": 5, "title": "Add TRAINER_RUBRIC.yml", "status": "completed"},
     {"id": 6, "title": "Add PR_TEMPLATE.md and TRAINER_SELF_CHECK.md", "status": completedpending"},
-    {"id": 7, "title": "Create Anktechsol HF Space for pilot", "status": "pending"},
-    {"id": 8, "title": "Create org secrets (HF_TOKEN)", "status": "pending"},
+    {"id": 7, "title": "Create Anktechsol HF Space for pilot", "status": "completed"},
+    {"id": 8, "title": "Create org secrets (HF_TOKEN)", "status": "completed"},
     {"id": 9, "title": "Test push to HF Space (mirror)", "status": "completed"},
     {"id": 10, "title": "Create marketing webhook issue automation", "status": "completed"}
   ],
