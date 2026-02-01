@@ -1,0 +1,28 @@
+name: "Final Project Rubric"
+pass_threshold: 70
+items:
+  - id: 1
+    name: Functionality
+    weight: 40
+    description: The project runs end-to-end without errors and produces correct, expected outputs across all intended use cases.
+    pass_threshold: 70
+  - id: 2
+    name: Reproducibility
+    weight: 20
+    description: The project can be fully reproduced from a clean environment using only the provided instructions, dependencies, and configuration.
+    pass_threshold: 70
+  - id: 3
+    name: Code Quality & Docs
+    weight: 15
+    description: Code is well-structured, consistently formatted, and accompanied by clear documentation including a README and inline comments where necessary.
+    pass_threshold: 70
+  - id: 4
+    name: Explanation & Demo
+    weight: 10
+    description: The student provides a clear verbal or written explanation of their approach, design decisions, and a working demonstration of the project.
+    pass_threshold: 70
+  - id: 5
+    name: Attribution & Marketing
+    weight: 15
+    description: All external resources, libraries, and inspirations are properly credited. The project includes a CREDIT.md and is deployed to the assigned Hugging Face Space.
+    pass_threshold: 70
