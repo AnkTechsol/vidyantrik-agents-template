@@ -11,7 +11,7 @@
     {"id": 7, "title": "Create Anktechsol HF Space for pilot", "status": "pending"},
     {"id": 8, "title": "Create org secrets (HF_TOKEN)", "status": "pending"},
     {"id": 9, "title": "Test push to HF Space (mirror)", "status": "completed"},
-    {"id": 10, "title": "Create marketing webhook issue automation", "status": "pending"}
+    {"id": 10, "title": "Create marketing webhook issue automation", "status": "completed"}
   ],
   "last_updated": 2026-02-01T20:20:00+05:30"
 }
