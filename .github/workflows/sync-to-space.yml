@@ -16,5 +16,5 @@ jobs:
 
       - name: Push to Hugging Face Space
         run: |
-          git remote add hf https://x-access-token:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Anktechsol/${{ github.event.repository.name }}
+          git remote add hf https://x-access-token:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Anktechsol/vidyantrik-cohort-pilot
           git push hf HEAD:refs/heads/main --force
