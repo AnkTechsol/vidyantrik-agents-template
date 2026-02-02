@@ -15,3 +15,4 @@ Created by Anktechsol
 | V2-01 | Unit 2 | Video script | pending |  | To be created | /videoscripts/unit-02.md |
 | V3-01 | Unit 3 | Video script | pending |  | To be created | /videoscripts/unit-03.md |
 | V4-01 | Unit 4 | Video script | pending |  | To be created | /videoscripts/unit-04.md |
+| PROJ-05 | Backend | Certificate Worker | completed | 2026-02-01 | Implemented PDF generation with Puppeteer | /backend/workers/generateCertificate.js |

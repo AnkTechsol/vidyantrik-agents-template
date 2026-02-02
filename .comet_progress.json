@@ -6,12 +6,12 @@
     {"id": 2, "title": "Generate React components with Gemini", "status":"completed"},
     {"id": 3, "title": "Claude: backend API skeleton", "status":"completed"},
     {"id": 4, "title": "Claude: DB schema and migrations", "status":"completed"},
-    {"id": 5, "title": "Claude: Certificate generator worker", "status":"pending"},
+    {"id": 5, "title": "Claude: Certificate generator worker", "status":"completed"},
     {"id": 6, "title": "Integrate frontend + backend, secrets setup", "status":"pending"},
     {"id": 7, "title": "MCQ flow and scoring tests", "status":"pending"},
     {"id": 8, "title": "Final test flow + certificate issuance", "status":"pending"},
     {"id": 9, "title": "Admin dashboard & trainer review queue", "status":"pending"},
     {"id": 10, "title": "Deploy test and QA run", "status":"pending"}
   ],
-  "last_updated": "2026-02-01T22:00:00+05:30"
+  "last_updated": "2026-02-01T23:30:00+05:30"
 }

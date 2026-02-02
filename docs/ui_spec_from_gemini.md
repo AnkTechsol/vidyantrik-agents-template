@@ -1,3 +1,78 @@
-```json
-{ "app_name": "Vidyantrik Course UI", "pages": [ { "title": "Course Catalog", "route": "/courses", "main_components": ["CourseCard", "SearchBar", "EnrollButton"], "purpose": "Users browse available courses and initiate enrollment via a grid layout." }, { "title": "Unit Viewer", "route": "/course/:id/unit/:unitId", "main_components": ["VideoPlayer", "MarkdownContent", "ProgressBar", "NavigationControls"], "purpose": "Displays educational content and tracks progress through specific lesson modules." }, { "title": "Assessment Portal", "route": "/course/:id/assessment", "main_components": ["MCQList", "Timer", "SubmitButton", "ScoreModal"], "purpose": "Hosts interactive quizzes and final exams with real-time feedback mechanisms." }, { "title": "Trainer Dashboard", "route": "/trainer/review", "main_components": ["ReviewTable", "ScoreAdjuster", "CommentBox"], "purpose": "Allows instructors to audit borderline failures and manually override results." } ], "components": [ { "name": "CourseCard", "props": ["title", "instructor", "thumbnail", "price"], "expected_behavior": "Navigates to detail page on click; shows hover elevation effect.", "tailwind_classes": "border rounded-lg p-4 shadow-sm hover:shadow-md transition-all" }, { "name": "ProgressBar", "props": ["percentage", "color"], "expected_behavior": "Smoothly animates width changes as user completes sections.", "tailwind_classes": "h-2 w-full bg-gray-200 rounded-full overflow-hidden" }, { "name": "MCQList", "props": ["questions", "selectedOption", "isSubmitted"], "expected_behavior": "Highlights selected option; turns green/red upon submission.", "tailwind_classes": "space-y-4 p-6 bg-white border rounded-xl" }, { "name": "ScoreModal", "props": ["score", "threshold", "onClose"], "expected_behavior": "Triggers confetti on pass; shows retry button on fail.", "tailwind_classes": "fixed inset-0 flex items-center justify-center bg-black/50" } ], "UX_flows": [ { "flow_name": "Course Completion Path", "steps": [ "Student clicks EnrollButton on Catalog.", "System redirects to Unit Viewer.", "Student interacts with NavigationControls to finish section.", "MCQList appears; student selects answers and hits Submit.", "ScoreModal displays immediate result; data POSTs to /api/progress." ] }, { "flow_name": "Certification Path", "steps": [ "ProgressBar reaches 100% for all preparatory units.", "Final Test button toggles from disabled to active.", "Student completes Assessment Portal flow.", "Backend validates score >= 80%.", "Certificate download link generates on success screen." ] }, { "flow_name": "Trainer Review Path", "steps": [ "Trainer filters ReviewTable for scores 75-79%.", "Trainer selects specific student attempt.", "Trainer uses ScoreAdjuster to add grace points.", "Trainer adds justification in CommentBox and hits Save.", "System triggers certificate issuance for the student." ] } ] }
-```
+{
+  "app_name": "Vidyantrik Course UI",
+  "pages": [
+    {
+      "title": "Course Landing",
+      "route": "/",
+      "main_components": ["CourseHeader", "UnitList", "EnrollButton"],
+      "purpose": "Displays course overview and unit structure."
+    },
+    {
+      "title": "Unit Page",
+      "route": "/unit/:id",
+      "main_components": ["VideoPlayer", "ContentBlock", "MCQSection"],
+      "purpose": "Shows unit content and end-of-section MCQ."
+    },
+    {
+      "title": "Final Test",
+      "route": "/final-test",
+      "main_components": ["Timer", "QuestionList", "SubmitButton"],
+      "purpose": "Timed final assessment locked until units complete."
+    },
+    {
+      "title": "Certificate",
+      "route": "/certificate",
+      "main_components": ["CertificateView", "SocialShareButton", "DownloadButton"],
+      "purpose": "Displays earned certificate."
+    },
+    {
+      "title": "Admin Dashboard",
+      "route": "/admin",
+      "main_components": ["ReviewQueue", "CertificateApprover"],
+      "purpose": "Trainer review for borderline fails."
+    }
+  ],
+  "components": [
+    {
+      "name": "CourseLanding",
+      "props": ["courseData"],
+      "expected_behavior": "Lists units, tracks progress.",
+      "tailwind_classes": "max-w-4xl mx-auto p-6"
+    },
+    {
+      "name": "UnitPage",
+      "props": ["unitData", "onComplete"],
+      "expected_behavior": "Shows content, verifies completion.",
+      "tailwind_classes": "grid grid-cols-1 md:grid-cols-3 gap-6"
+    },
+    {
+      "name": "MCQComponent",
+      "props": ["questions", "onResult"],
+      "expected_behavior": "Interactive quiz with immediate feedback.",
+      "tailwind_classes": "bg-white shadow rounded p-6"
+    },
+    {
+      "name": "FinalTest",
+      "props": ["testData", "onSubmit"],
+      "expected_behavior": "Timed, no feedback until end.",
+      "tailwind_classes": "border-red-500 border-2 p-8"
+    },
+    {
+      "name": "CertificatePage",
+      "props": ["certificateUrl", "studentName"],
+      "expected_behavior": "Shows PDF preview.",
+      "tailwind_classes": "text-center p-10 bg-gray-50"
+    },
+    {
+      "name": "AdminDashboard",
+      "props": ["reviews", "onApprove"],
+      "expected_behavior": "List of pending reviews.",
+      "tailwind_classes": "w-full overflow-x-auto"
+    }
+  ],
+  "UX_flows": [
+    "student course enrollment -> unit page -> complete section -> MCQ -> immediate score -> save to backend",
+    "student completes all units -> final test unlock -> submit final test -> if pass -> certificate issuance",
+    "trainer review flow for borderline fails"
+  ]
+}
