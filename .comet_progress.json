@@ -3,7 +3,7 @@
   "project": "Vidyantrik Course UI + MCQ",
   "steps": [
     {"id": 1, "title": "Design UI wireframes with Gemini", "status":"completed"},
-    {"id": 2, "title": "Generate React components with Gemini", "status":"pending"},
+    {"id": 2, "title": "Generate React components with Gemini", "status":"completed"},
     {"id": 3, "title": "Claude: backend API skeleton", "status":"pending"},
     {"id": 4, "title": "Claude: DB schema and migrations", "status":"pending"},
     {"id": 5, "title": "Claude: Certificate generator worker", "status":"pending"},
